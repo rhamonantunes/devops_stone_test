@@ -1,0 +1,1 @@
+# devops_stone_test
