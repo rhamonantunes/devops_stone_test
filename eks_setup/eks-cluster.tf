@@ -47,7 +47,7 @@ resource "aws_security_group" "stone-cluster" {
   }
 
   tags = {
-    Name = "terraform-eks-stone"
+    Name = "tf-eks-sg"
   }
 }
 
