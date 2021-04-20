@@ -1,0 +1,47 @@
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-server.prometheus.svc.cluster.local
+        access: proxy
+        isDefault: true
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+      - name: 'goldpinger'
+        orgId: 1
+        folder: 'Goldpinger'
+        type: file
+        disableDeletion: true
+        editable: true
+        options:
+          path: /var/lib/grafana/dashboards/goldpinger
+      - name: 'k8s'
+        orgId: 1
+        folder: 'K8s'
+        type: file
+        disableDeletion: true
+        editable: true
+        options:
+          path: /var/lib/grafana/dashboards/k8s
+dashboards:
+  goldpinger:
+    goldpinger-latency:
+      gnetId: 10949
+      datasource: Prometheus
+  k8s:
+    kubernetes-all-nodes:
+      gnetId: 10000
+      datasource: Prometheus
+    kubernetes-pods:
+      gnetId: 6781
+      datasource: Prometheus
+    pods_monitoring_dashboard:
+        gnetId: 6417
+        datasource: Prometheus
+    cluster_monitoring_dashboard:
+          gnetId: 3119
+          datasource: Prometheus
