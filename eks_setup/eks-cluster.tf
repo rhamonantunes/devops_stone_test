@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "stone-cluster-AmazonEKSVPCResourceCon
 }
 
 resource "aws_security_group" "stone-cluster" {
-  name        = "tf-eks-iam-role"
+  name        = "tf-eks-sg"
   description = "Cluster communication with worker nodes"
   vpc_id      = aws_vpc.stone.id
 
