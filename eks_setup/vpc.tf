@@ -11,10 +11,10 @@ resource "aws_vpc" "stone" {
   enable_dns_support = true
   enable_dns_hostnames = true
 
-  tags = tomap({
-    "Name" = "tf-node-iam-role"
-    "kubernetes.io/cluster/${var.cluster-name}" = "shared"
-  })
+  tags = {
+    Name = "tf_eks_vpc",
+    "kubernetes.io/cluster/${var.cluster-name}" = "shared",
+  }
 }
 
 resource "aws_subnet" "stone" {
@@ -25,17 +25,17 @@ resource "aws_subnet" "stone" {
   map_public_ip_on_launch = true
   vpc_id                  = aws_vpc.stone.id
 
-  tags = tomap({
-    "Name" = "tf-node-iam-role"
-    "kubernetes.io/cluster/${var.cluster-name}" = "shared"
-  })
+  tags = {
+    Name = "tf_eks_subnet",
+    "kubernetes.io/cluster/${var.cluster-name}" = "shared",
+  }
 }
 
 resource "aws_internet_gateway" "stone" {
   vpc_id = aws_vpc.stone.id
 
   tags = {
-    Name = "terraform-eks-stone"
+    Name = "tf_eks_dnat"
   }
 }
 
