@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "eks_state" {
-  bucket = "eks-terraformstate"
+  bucket = "eks-terraform-state"
 
   versioning {
     enabled = true
@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "eks_state" {
 }
 
 resource "aws_s3_bucket" "monitoring_state" {
-  bucket = "monitoring-terraformstate"
+  bucket = "monitoring-terraform-state"
 
   versioning {
     enabled = true

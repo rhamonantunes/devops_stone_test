@@ -5,7 +5,7 @@ provider "aws" {
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    bucket = "eks-terraformstate"
+    bucket = "eks-terraform-state"
     key    = "terraform.tfstate"
     region = "us-east-2"
   }
