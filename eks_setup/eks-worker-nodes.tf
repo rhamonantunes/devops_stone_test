@@ -40,15 +40,15 @@ resource "aws_iam_role_policy_attachment" "stone-node-AmazonEC2ContainerRegistry
 
 resource "aws_eks_node_group" "eks_node" {
   cluster_name    = aws_eks_cluster.stone.name
-  instance_types  = ["t2.small"]
+  instance_types  = ["t3.xlarge"]
   node_group_name = "stone_01"
   node_role_arn   = aws_iam_role.stone-node.arn
   subnet_ids = aws_subnet.stone[*].id
 
   scaling_config {
-    desired_size = 2
-    max_size     = 3
-    min_size     = 1
+    desired_size = 8
+    max_size     = 10
+    min_size     = 5
   }
 
   depends_on = [
