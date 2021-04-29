@@ -38,6 +38,6 @@ terraform apply
 
 4. Use o script abaixo para gerar as URLs de acesso aos serviços Prometheus, Grafana e Goldpinger:
 ```shell
-$ chmod u+x urls.sh
-$ ./urls.sh
+chmod u+x urls.sh
+./urls.sh
 ```
