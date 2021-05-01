@@ -46,9 +46,9 @@ resource "aws_eks_node_group" "eks_node" {
   subnet_ids = aws_subnet.stone[*].id
 
   scaling_config {
-    desired_size = 8
-    max_size     = 10
-    min_size     = 5
+    desired_size = 5
+    max_size     = 8
+    min_size     = 3
   }
 
   depends_on = [
