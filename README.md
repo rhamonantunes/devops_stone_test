@@ -15,9 +15,12 @@
 > **_NOTE:_**  Verificar se o nome do s3 bucket não está em uso ou processo de exclusão:
 "Bucket with the same name already exists" or "A conflicting conditional operation is currently in progress against this resource. Please try again."
 > [monitoring_setup/backend.tf#L3](monitoring_setup/backend.tf#L3)
+> [monitoring_setup/kubernetes.tf#L8](monitoring_setup/kubernetes.tf#L8)
 > [eks_setup/backend.tf#L3](eks_setup/backend.tf#L3)
 > [s3_setup/s3.tf#L2](s3_setup/s3.tf#L2)
 > [s3_setup/s3.tf#L18](s3_setup/s3.tf#L18)
+> [s3_setup/empty-s3.py#L4](s3_setup/empty-s3.py#L4)
+> [s3_setup/empty-s3.py#L7](s3_setup/empty-s3.py#L7)
 
 ```shell
 terraform init
